@@ -626,7 +626,7 @@ class SavePersistenceAttributesResponseInterceptor(AbstractResponseInterceptor):
     def process(self, handler_input, response):
         # type: (HandlerInput, Response) -> None
         
-        persistence_attr = handler_input.attributes_manager.persistent_attributes
+        handler_input.attributes_manager.persistent_attributes = persistence_attr
         handler_input.attributes_manager.save_persistent_attributes()
         
         return
